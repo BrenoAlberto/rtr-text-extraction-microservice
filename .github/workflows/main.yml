@@ -33,7 +33,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Install Serverless Framework
-        run: npm install -g serverless
+        run: |
+          npm i 
+          npm install -g serverless
 
       - name: Deploy to AWS
         run: sls deploy --stage ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
