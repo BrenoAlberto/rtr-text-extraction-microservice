@@ -37,8 +37,12 @@ jobs:
           npm i 
           npm install -g serverless
 
-      - name: Deploy to AWS
-        run: sls deploy --stage ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
+      - name: serverless deploy
+        uses: serverless/github-action@v3
+        with:
+          args: -c "sls deploy --stage ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}"
+          entrypoint: /bin/sh
+
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
