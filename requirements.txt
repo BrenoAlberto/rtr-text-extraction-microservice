@@ -1,8 +1,1 @@
-exceptiongroup==1.1.1
-iniconfig==2.0.0
-packaging==23.1
-pluggy==1.0.0
 PyPDF2==3.0.1
-pytest==7.3.1
-tomli==2.0.1
-typing_extensions==4.5.0
