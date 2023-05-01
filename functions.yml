@@ -1,0 +1,7 @@
+extractText:
+  handler: handler.extract_text_handler
+  events:
+    - http:
+        path: /extract-text
+        method: post
+        # cors: true
