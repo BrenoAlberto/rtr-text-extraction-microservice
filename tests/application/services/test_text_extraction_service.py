@@ -31,3 +31,6 @@ def test_extract_text_returns_none_when_no_content(text_extraction_service):
     result = text_extraction_service.extract_text(file_base_64)
     text_extraction_service.text_extractor.extract_text.assert_called_with(file_base_64)
     assert result is None
+
+def test_fail_just_to_check_ci(text_extraction_service):
+    assert False
