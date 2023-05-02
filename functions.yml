@@ -1,5 +1,6 @@
 extractText:
   handler: handler.extract_text_handler
+  description: Extract text from base64 encoded files
   events:
     - http:
         path: /extract-text
